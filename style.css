@@ -1,47 +1,105 @@
 * {
     margin: 0;
     padding: 0;
-    font-family: poppins, sans-serif;
+    font-family: 'Poppins', sans-serif;
     box-sizing: border-box;
 }
 
-.her0 {
+.hero {
     width: 100%;
     min-height: 100vh;
     background: linear-gradient(45deg, #1d0000, #20205b);
     display: flex;
     align-items: center;
     justify-content: center;
+    color: black;
 }
 
-.calender {
-    width: 300px;
-    height: 250px;
+.calendar {
+    width: 320px;
     background: #fff;
     display: flex;
-    align-items: center;
+    flex-direction: column;
     border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    /* Prevent overflow from inside the calendar */
 }
 
-.left, .right {
-   
-    height: 100%;
+.header {
     display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 24px;
-}
-
-.right {
-    width: 42%;
-    background: #f4351e;
+    justify-content: space-between;
+    padding: 15px;
+    background-color: #f4351e;
     color: #fff;
+    border-top-left-radius: 10px;
     border-top-right-radius: 10px;
-    border-bottom-left-radius: 10px;
 }
 
-.left {
-    width: 58%;
+.date {
+    text-align: center;
+    padding: 20px;
+    background: #f1f1f1;
 }
 
+.body {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-gap: 5px;
+    padding: 5px 15px;
+    width: 100%;
+    max-width: 100%;
+}
 
+.day {
+    text-align: center;
+    padding: 10px;
+    font-size: 16px;
+    background-color: #f0f0f0;
+    border-radius: 5px;
+    max-width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+button {
+    font-size: 24px;
+    padding: 10px 20px;
+    background-color: #f4351e;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #d03517;
+}
+
+button:focus {
+    outline: none;
+}
+
+.current-day {
+    background-color: #f4351e;
+    color: black;
+}
+
+@media (max-width: 600px) {
+    .calendar {
+        width: 90%;
+    }
+
+    button {
+        font-size: 28px;
+        padding: 12px 25px;
+    }
+}
+
+@media (max-width: 320px) {
+    .day {
+        font-size: 14px;
+        padding: 8px;
+    }
+}
